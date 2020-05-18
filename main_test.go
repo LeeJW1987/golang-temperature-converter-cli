@@ -27,8 +27,8 @@ func TestMain(m *testing.M) {
 	exitCode := m.Run()
 
 	cleanUp := exec.Command("rm", "-f", binaryName)
-	cleanUperr := cleanUp.Run()
-	if cleanUperr != nil {
+	err = cleanUp.Run()
+	if err != nil {
 		fmt.Println("could not clean up", err)
 	}
 
